@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1654959750 source:c:\users\gabri\onedrive\Área de trabalho\trabalho-pilha\jogomemoria\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<conio.h>
+	"pilha.h"
+	<time.h>
+
+1654959725 c:\users\gabri\onedrive\Área de trabalho\trabalho-pilha\jogomemoria\pilha.h
+

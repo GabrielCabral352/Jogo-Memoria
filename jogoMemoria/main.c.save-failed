@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include "pilha.h"
+
+
+int menu(void);
+
+void opcao(node *PILHA, int op);
+void exibe(node *PILHA);
+
+char alfabeto[26] = [
+                    'A','B','C','D','E','F','G','H',
+                    'I','J','K','L','M','N','O','P',
+                    'Q','R','S','T','U','V','W','X',
+                    'Y','Z'
+                    ];
+
+
+int main(void){
+    setlocale(LC_ALL,"");
+    node *PILHA = (node *) malloc(sizeof(node));
+    if(!PILHA){
+        printf("Sem memoria disponivel!\n");
+        exit(1);
+    }else{
+        inicia(PILHA);
+        int opt;
+        do{
+            opt=menu();
+            opcao(PILHA,opt);
+        }while(opt);
+        free(PILHA);
+        return 0;
+    }
+}
+
+int menu(void){
+
+    system("cls");
+    printf("            Jogo da Memória          \n");
+    printf("          *****Genius C*****         \n\n\n");
+    int opt;
+
+    printf("            Escolha a opcao\n");
+    printf("            1. Jogar\n");
+    printf("            0. Sair\n");
+    printf("            Opcao: ");scanf("%d", &opt);
+
+    return opt;
+}
+
+void opcao(node *PILHA, int op){
+    node *tmp;
+    switch(op){
+        case 0:
+          libera(PILHA);
+        break;
+
+        case 1:
+
+        break;
+
+        default:
+            printf("\n\nComando invalido\n\n");
+    }
+    system("pause");
+}
+
+
