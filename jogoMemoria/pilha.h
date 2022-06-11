@@ -20,6 +20,7 @@ void inicia(node *PILHA)
  tam=0;
 }
 
+
 int vazia(node *PILHA)
 {
  if(PILHA->prox == NULL)
@@ -50,15 +51,14 @@ void exibe(node *PILHA)
 
  node *tmp;
  tmp = PILHA->prox;
- printf("PILHA:");
+ printf("\t\tA sequência de letras até o momento foi:\n\t\t");
  while( tmp != NULL){
   printf(" %C ", tmp->vLetra);
   tmp = tmp->prox;
  }
 }
 
-void libera(node *PILHA)
-{
+void libera(node *PILHA){
  if(!vazia(PILHA)){
   node *proxNode,
      *atual;
@@ -107,4 +107,11 @@ node *pop(node *PILHA){
   return ultimo;
  }
 }
+
+void esvaziar(node *PILHA){
+    while(tam){
+        pop(PILHA);
+    }
+}
+
 #endif // PILHA_H_INCLUDED
